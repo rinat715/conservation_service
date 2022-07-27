@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+option go_package = "conservation_service/api_v1";
+
+package api.v1;
+
+service ServiceDb {
+    rpc AddTask(Record) returns (TaskID);
+}
+
+message TaskID {
+    string taskId = 1;
+}
+
+message Record {
+    string cust_id = 1;     // CI6XLYUMQK
+    string start_date = 2;  // 2015-05-01
+    string end_date = 3;    // 2020-03-01 optional
+    string trans_id = 4;    // T4H2B228GNWC4ES
+    string date = 5;
+    int32 year = 6;
+    int32 mounth = 7;
+    int32 day = 8;
+    string exp_type = 9;    // Entertainment
+    float amount = 10;      
+}
